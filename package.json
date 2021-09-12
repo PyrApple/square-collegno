@@ -15,7 +15,7 @@
     "transpile": "node ./bin/runner --transpile",
     "watch": "node ./bin/runner --watch",
     "build": "node bin/runner --transpile",
-    "postinstall": "npm run build",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
