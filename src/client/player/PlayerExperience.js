@@ -69,16 +69,13 @@ class PlayerExperience extends soundworks.Experience {
 
       });
 
-      // sort events by time
-      // state.events.sort((a, b) => (a.time > b.time) ? 1 : -1);
-
       // // debug: reduce times
       // console.log('contracted time for debug');
       // var offset = 0;
       // state.events.forEach(event => {
       //   // event.time = Math.min(event.time/10.0, 3.0);
       //   event.time = offset;
-      //   offset += 1.0;
+      //   offset += 0.1;
       //   // event.time /= 10.0;
       // });
 

@@ -81,6 +81,10 @@ const config = {
           duration: 1,
         },
         {
+          time: 7,
+          type: 'checkpoint'
+        },
+        {
           time: 6,
           type: 'text-subtitle',
           placeholder: 'center',
@@ -116,8 +120,8 @@ const config = {
         {
           time: 117,
           type: 'text',
-          placeholder: 'bottom',
-          classes: ['banner'],
+          placeholder: 'center',
+          classes: ['banner', 'large', 'bold'],
           content: `Cliccare solo quando si é raggiunta la posizione`
         },
         {
@@ -153,64 +157,57 @@ const config = {
           duration: 1,
         },
         {
-          time: 76+0.3, // 0.01
+          time: 76+0.3,
           type: 'text-subtitle',
           placeholder: 'center',
-          // classes: ['color-red'],
           content: `
             There's no synagogue
           `,
         },
         {
-          time: 76+2.7, // 0.01
+          time: 76+2.7,
           type: 'text-subtitle',
           placeholder: 'center',
-          // classes: ['color-red'],
           content: `
             church
           `,
         },
         {
-          time: 76+4, // 0.01
+          time: 76+4,
           type: 'text-subtitle',
           placeholder: 'center',
-          // classes: ['color-red'],
           content: `
             polis
           `,
         },
         {
-          time: 76+5.5, // 0.01
+          time: 76+5.5,
           type: 'text-subtitle',
           placeholder: 'center',
-          // classes: ['color-red'],
           content: `
             ethnic community
           `,
         },
         {
-          time: 76+7.0, // 0.01
+          time: 76+7.0,
           type: 'text-subtitle',
           placeholder: 'center',
-          // classes: ['color-red'],
           content: `
             that does not deserve
           `,
         },
         {
-          time: 76+8.9, // 0.01
+          time: 76+8.9,
           type: 'text-subtitle',
           placeholder: 'center',
-          // classes: ['color-red'],
           content: `
             to be abandoned.
           `,
         },
         {
-          time: 76+10.8, // 0.01
+          time: 76+10.8,
           type: 'text-subtitle',
           placeholder: 'center',
-          // classes: ['color-red'],
           content: ``,
         },
         {
@@ -312,8 +309,8 @@ var templateState =
     {
       time: 48,
       type: 'text',
-      placeholder: 'bottom',
-      classes: ['banner'],
+      placeholder: 'center',
+      classes: ['banner', 'large', 'bold'],
       content: `Cliccare solo quando si é raggiunta la posizione`
     },
     {
@@ -395,198 +392,34 @@ subStates.forEach(subState => {
 
 
 // ----------------------------------------------------------------------
+// Add dummy events, used as checkpoints to avoid restart whole state
+// (when true events are too spaced out)
+// ----------------------------------------------------------------------
+
+// loop over states
+config.states.forEach(state => {
+
+  // get last event time
+  var lastEventTime = 0.0;
+  state.events.forEach(event => {
+    lastEventTime = Math.max(event.time, lastEventTime);
+  });
+
+  // add checkpoint states
+  var checkpointInterval = 10.0; // in sec
+  var numCheckpoint = Math.floor(lastEventTime / checkpointInterval);
+  for (var iCheckpoint = 1; iCheckpoint <= numCheckpoint; iCheckpoint++) {
+    state.events.splice(0, 0, { time: iCheckpoint * checkpointInterval, type: 'checkpoint'});
+  }
+
+  // sort state events by increasing time
+  state.events.sort((a, b) => (a.time > b.time) ? 1 : -1);
+
+});
+
+
+// ----------------------------------------------------------------------
 // Expot module
 // ----------------------------------------------------------------------
 
-
 module.exports = config;
-
-
-
-// ----------------------------------------------------------------------
-// TODELETE (old states)
-// ----------------------------------------------------------------------
-
-
-// {
-//   title: 'Intro',
-
-//   stream: {
-//     id: 'Intro',
-//     file: 'streams/Intro.wav',
-//     loop: false,
-//   },
-//   // list of events
-//   events: [
-//     {
-//       time: 0,
-//       type: 'fade-out',
-//       placeholder: 'background-color',
-//       duration: 0,
-//     },
-//     {
-//       time: 0,
-//       type: 'background-color',
-//       placeholder: 'background-color',
-//       color: '#000000',
-//     },
-//     {
-//       time: 0,
-//       type: 'fade-in',
-//       placeholder: 'background-color',
-//       duration: 0.1,
-//     },
-//     {
-//       time: 0,
-//       type: 'text',
-//       placeholder: 'center',
-//       classes: ['white', 'align-center'],
-//       content: `
-//               <span class="title">SQUARE Collegno</span> <br />
-//               <span class="subtitle">by Lorenzo Bianchi Hoesch</span>
-//         `,
-//     },
-//     {
-//       time: 2,
-//       type: 'text-subtitle',
-//       placeholder: 'center',
-//       // classes: ['color-red'],
-//       content: `
-//         <p class="use-headphones"> Esperienza da fare in cuffia </p>
-//         <p class="fa fa-headphones" aria-hidden="true"></p>
-//       `,
-//     },
-//     {
-//       time: 4,
-//       type: 'text-subtitle',
-//       placeholder: 'center',
-//       // classes: ['white', 'align-center'],
-//       content: `
-//         lorem ipsum dolor
-//         <br /><br />
-//         lorem ipsum dolor
-//       `,
-//     },
-//     {
-//       time: 6,
-//       type: 'text',
-//       placeholder: 'center',
-//       content: '',
-//     },
-//     {
-//       time: 8,
-//       type: 'background-image',
-//       placeholder: 'background-image',
-//       url: './images/image_1.jpg',
-//     },
-//     {
-//       time: 10,
-//       type: 'fade-out',
-//       placeholder: 'background-color',
-//       duration: 2,
-//     },
-//     {
-//       time: 12,
-//       type: 'text-subtitle',
-//       placeholder: 'top',
-//       classes: ['gradient'],
-//       content: `The first photo just showed up.`
-//     },
-//     {
-//       time: 14,
-//       type: 'text-subtitle',
-//       placeholder: 'top',
-//       classes: ['gradient'],
-//       content: ``
-//     },
-//     {
-//       time: 16,
-//       type: 'text',
-//       placeholder: 'bottom',
-//       classes: ['banner'],
-//       content: `Cliccare solo quando si é raggiunta la posizione`
-//     },
-//     {
-//       time: 18,
-//       type: 'trigger-next-state',
-//       placeholder: 'screen',
-//       triggerAudio: {
-//         id: '02-touch',
-//         file: 'sounds/touch/02-touch.mp3',
-//       }
-//     },
-//   ]
-// },
-
-
-// {
-//   title: 'Discours Lorenzo',
-
-//   stream: {
-//     id: 'streaming_2',
-//     file: 'streams/streaming_2.wav',
-//     loop: false,
-//   },
-//   // list of events
-//   events: [
-//     {
-//       time: 0,
-//       type: 'background-color',
-//       placeholder: 'background-color',
-//       color: '#272727',
-//     },
-//     {
-//       time: 0,
-//       type: 'fade-in',
-//       placeholder: 'background-color',
-//       duration: 1,
-//     },
-//     {
-//       time: 2,
-//       type: 'text',
-//       placeholder: 'top',
-//       content: `Ascolta`,
-//     },
-//     {
-//       time: 4,
-//       type: 'background-image',
-//       placeholder: 'background-image',
-//       url: './images/image_2.jpg',
-//     },
-//     {
-//       time: 6,
-//       type: 'fade-out',
-//       placeholder: 'background-color',
-//       duration: 5,
-//     },
-//     {
-//       time: 8,
-//       type: 'text',
-//       placeholder: 'top',
-//       content: ``,
-//     },
-//     {
-//       time: 10,
-//       type: 'text-subtitle',
-//       classes: ['gradient'],
-//       placeholder: 'top',
-//       content: `Another photo`,
-//     },
-//     {
-//       time: 12,
-//       type: 'text',
-//       placeholder: 'bottom',
-//       classes: ['banner'],
-//       content: `Cliccare solo quando si é raggiunta la posizione.`,
-//     },
-//     {
-//       time: 12,
-//       type: 'trigger-next-state',
-//       placeholder: 'screen',
-//       triggerAudio: {
-//         id: 'touch-1',
-//         file: 'sounds/touch/touch_2.mp3',
-//       }
-//     },
-//   ]
-// },
