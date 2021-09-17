@@ -28,7 +28,7 @@ const config = {
       yes: 'SI',
       no: 'PROBLEMA',
       testFile: 'sounds/check/00-ISTRUZIONI.mp3',
-      testTouchFile: 'sounds/check/sound_check.mp3',
+      // testTouchFile: 'sounds/check/sound_check.mp3',
     },
     restartPage: {
       restart: 'Ricominciare dall&#39;inizio',
