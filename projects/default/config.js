@@ -89,14 +89,28 @@ const config = {
           type: 'text-subtitle',
           placeholder: 'center',
           classes: ['white', 'align-center'],
-          content: `Riceverai delle immagini sul tuo telefono, dovrai trovare il punto dal quale quelle immagini sono state scattate, solo a quel punto potrai cliccare e seguire il suo racconto.`
+          content: `Riceverai delle immagini sul tuo telefono, dovrai trovare il punto dal quale quelle immagini sono state scattate, solo a quel punto potrai cliccare e seguire il suo racconto`
+        },
+        {
+          time: 35,
+          type: 'text-subtitle',
+          placeholder: 'center',
+          classes: ['white', 'align-center'],
+          content: `Ascolta`
         },
         {
           time: 55,
           type: 'text-subtitle',
           placeholder: 'center',
           classes: ['white', 'align-center'],
-          content: `In another dimension, with voyeuristic intentions.`
+          content: `In another dimension, with voyeuristic intentions`
+        },
+        {
+          time: 62,
+          type: 'text-subtitle',
+          placeholder: 'center',
+          classes: ['white', 'align-center'],
+          content: `Ascolta`
         },
         {
           time: 72,
@@ -105,7 +119,7 @@ const config = {
           url: './images/02-Image.JPG',
         },
         {
-          time: 76,
+          time: 77,
           type: 'text-subtitle',
           placeholder: 'center',
           classes: ['white', 'align-center'],
@@ -122,7 +136,7 @@ const config = {
           type: 'text',
           placeholder: 'center',
           classes: ['banner', 'large', 'bold'],
-          content: `Cliccare solo quando si é raggiunta la posizione`
+          content: `Toccare lo schermo una volta raggiunta la posizione`
         },
         {
           time: 117,
@@ -155,6 +169,13 @@ const config = {
           type: 'fade-in',
           placeholder: 'background-color',
           duration: 1,
+        },
+        {
+          time: 1,
+          type: 'text-subtitle',
+          placeholder: 'center',
+          classes: ['white', 'align-center'],
+          content: `Ascolta`
         },
         {
           time: 76+0.3,
@@ -289,10 +310,30 @@ var templateState =
 
   events: [
     {
-      time: 0,
+      time: 0.0,
+      type: 'background-color',
+      placeholder: 'background-color',
+      color: '#282828',
+    },
+    {
+      time: 0.1,
       type: 'fade-in',
       placeholder: 'background-color',
       duration: 1,
+    },
+    {
+      time: 1,
+      type: 'text-subtitle',
+      placeholder: 'center',
+      classes: ['white', 'align-center'],
+      content: `Ascolta`
+    },
+    {
+      time: 25,
+      type: 'text-subtitle',
+      placeholder: 'center',
+      classes: ['white', 'align-center'],
+      content: ``
     },
     {
       time: 26,
@@ -311,7 +352,7 @@ var templateState =
       type: 'text',
       placeholder: 'center',
       classes: ['banner', 'large', 'bold'],
-      content: `Cliccare solo quando si é raggiunta la posizione`
+      content: `Toccare lo schermo una volta raggiunta la posizione`
     },
     {
       time: 48,
@@ -368,20 +409,23 @@ subStates.forEach(subState => {
   state.stream.id = fileId;
   state.stream.file = 'streams/' + subState.stream; // todo: remove .wav extension
 
+  // update text before image
+  state.events[3].time = Math.max(subState.timeImage, 1.1);
+
   // update image
   var fileName = (index+2).toString().padStart(2, '0') + '-Image.JPG'
   // fileName = '02-Image.JPG';
-  state.events[1].url = './images/' + fileName
-  state.events[1].time = Math.max(subState.timeImage - 5, 1); // load image (doesn't load before fade in of previous screen)
-  state.events[2].time = subState.timeImage; // fade in image
+  state.events[4].url = './images/' + fileName
+  state.events[4].time = Math.max(subState.timeImage - 5, 1); // load image (doesn't load before fade in of previous screen)
+  state.events[5].time = subState.timeImage; // fade in image
 
   // update touch
-  state.events[3].time = subState.timeTouch; // click text
-  state.events[4].time = subState.timeTouch; // touch enable
+  state.events[6].time = subState.timeTouch; // click text
+  state.events[7].time = subState.timeTouch; // touch enable
   fileName = (index+2).toString().padStart(2, '0') + '-touch.mp3'
-  state.events[4].triggerAudio.file = './sounds/touch/' + fileName
+  state.events[7].triggerAudio.file = './sounds/touch/' + fileName
   fileId = fileName.replace(/\.[^/.]+$/, "")
-  state.events[4].triggerAudio.id = fileId; // remove extension
+  state.events[7].triggerAudio.id = fileId; // remove extension
 
   // insert
   config.states.splice(index, 0, state);
@@ -417,6 +461,10 @@ config.states.forEach(state => {
 
 });
 
+
+// // debug: remove some states
+// config.states = config.states.splice(14, config.states.length);
+// console.log(config.states);
 
 // ----------------------------------------------------------------------
 // Expot module
