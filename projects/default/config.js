@@ -99,34 +99,34 @@ const config = {
           content: `Ascolta`
         },
         {
-          time: 55,
+          time: 50,
           type: 'text-subtitle',
           placeholder: 'center',
           classes: ['white', 'align-center'],
           content: `In another dimension, with voyeuristic intentions`
         },
         {
-          time: 62,
+          time: 58,
           type: 'text-subtitle',
           placeholder: 'center',
           classes: ['white', 'align-center'],
           content: `Ascolta`
         },
         {
-          time: 72,
+          time: 67,
           type: 'background-image',
           placeholder: 'background-image',
           url: './images/02-Image.JPG',
         },
         {
-          time: 77,
+          time: 72,
           type: 'text-subtitle',
           placeholder: 'center',
           classes: ['white', 'align-center'],
           content: ``
         },
         {
-          time: 77,
+          time: 72,
           type: 'fade-out',
           placeholder: 'background-color',
           duration: 1,
