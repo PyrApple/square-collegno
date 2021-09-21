@@ -81,18 +81,18 @@ const config = {
           duration: 1,
         },
         {
-          time: 7,
-          type: 'checkpoint'
-        },
-        {
-          time: 6,
+          time: 0.5,
           type: 'text-subtitle',
           placeholder: 'center',
           classes: ['white', 'align-center'],
           content: `Riceverai delle immagini sul tuo telefono, dovrai trovare il punto dal quale quelle immagini sono state scattate, solo a quel punto potrai cliccare e seguire il suo racconto`
         },
         {
-          time: 35,
+          time: 7,
+          type: 'checkpoint'
+        },
+        {
+          time: 25,
           type: 'text-subtitle',
           placeholder: 'center',
           classes: ['white', 'align-center'],
@@ -132,14 +132,14 @@ const config = {
           duration: 1,
         },
         {
-          time: 117,
+          time: 110,
           type: 'text',
           placeholder: 'center',
           classes: ['banner', 'large', 'bold'],
           content: `Toccare lo schermo una volta raggiunta la posizione`
         },
         {
-          time: 117,
+          time: 110,
           type: 'trigger-next-state',
           placeholder: 'screen',
           triggerAudio: {
@@ -178,7 +178,7 @@ const config = {
           content: `Ascolta`
         },
         {
-          time: 76+0.3,
+          time: 40+0.3,
           type: 'text-subtitle',
           placeholder: 'center',
           content: `
@@ -186,7 +186,7 @@ const config = {
           `,
         },
         {
-          time: 76+2.7,
+          time: 40+2.7,
           type: 'text-subtitle',
           placeholder: 'center',
           content: `
@@ -194,7 +194,7 @@ const config = {
           `,
         },
         {
-          time: 76+4,
+          time: 40+4,
           type: 'text-subtitle',
           placeholder: 'center',
           content: `
@@ -202,7 +202,7 @@ const config = {
           `,
         },
         {
-          time: 76+5.5,
+          time: 40+5.5,
           type: 'text-subtitle',
           placeholder: 'center',
           content: `
@@ -210,7 +210,7 @@ const config = {
           `,
         },
         {
-          time: 76+7.0,
+          time: 40+7.0,
           type: 'text-subtitle',
           placeholder: 'center',
           content: `
@@ -218,7 +218,7 @@ const config = {
           `,
         },
         {
-          time: 76+8.9,
+          time: 40+8.9,
           type: 'text-subtitle',
           placeholder: 'center',
           content: `
@@ -226,20 +226,14 @@ const config = {
           `,
         },
         {
-          time: 76+10.8,
-          type: 'text-subtitle',
-          placeholder: 'center',
-          content: ``,
-        },
-        {
-          time: 76+10.8,
+          time: 40+11.8,
           type: 'text',
           placeholder: 'top',
           classes: ['large', 'bold'],
           content: `Square Collegno`,
         },
         {
-          time: 76+10.8,
+          time: 40+11.8,
           type: 'text',
           placeholder: 'center',
           classes: ['white', 'align-center'],
@@ -258,7 +252,14 @@ const config = {
           `,
         },
         {
-          time: 76+15.8,
+          time: 40+11.8,
+          type: 'text',
+          placeholder: 'bottom',
+          classes: ['banner'],
+          content: `<a href="https://www.lavanderiaavapore.eu/square/">per approfondire</a>`,
+        },
+        {
+          time: 40+19.8,
           type: 'text',
           placeholder: 'center',
           classes: ['white', 'align-center'],
@@ -270,7 +271,7 @@ const config = {
           `,
         },
         {
-          time: 76+20.8,
+          time: 40+27.8,
           type: 'text',
           placeholder: 'center',
           classes: ['white', 'align-center'],
@@ -280,13 +281,6 @@ const config = {
               <dd>Olivier Warusfel (Espaces acoustiques et cognitifs, IRCAM-STMS), Norbert Schnell, Frederic Bevilacqua, Benjamin Matuszewski (Interaction son musique mouvement, IRCAM-STMS), consulenti scientifici IRCAM. Produzione IRCAM-Center Pompidou , Lavanderie a Vapore, Ornithology Productions, Produttore esecutivo PLATÔ</dd>
             </dl>
           `,
-        },
-        {
-          time: 76+20.8,
-          type: 'text',
-          placeholder: 'bottom',
-          classes: ['banner'],
-          content: `<a href="https://www.lavanderiaavapore.eu/square/">www.lavanderiaavapore.eu/square</a>`,
         },
       ]
     },
@@ -369,13 +363,13 @@ var templateState =
 var subStates = [
 {'stream': '02-STIRERIA.wav', 'timeImage': 31, 'timeTouch': 48},
 {'stream': '03-ASCENSORE.wav', 'timeImage': 6, 'timeTouch': 7},
-{'stream': '04-ASCENSORE-TASTI.wav', 'timeImage': 37, 'timeTouch': 46},
+{'stream': '04-ASCENSORE-TASTI.wav', 'timeImage': 32, 'timeTouch': 42},
 {'stream': '05-SALA_PROVE.wav', 'timeImage': 62, 'timeTouch': 83},
 {'stream': '06-FINESTRA.wav', 'timeImage': 95, 'timeTouch': 136},
 {'stream': '07-USCITA.wav', 'timeImage': 18, 'timeTouch': 91},
-{'stream': '08-CORTILE-LAVANDERIA.wav', 'timeImage': 35, 'timeTouch': 443},
+{'stream': '08-CORTILE-LAVANDERIA.wav', 'timeImage': 35, 'timeTouch': 405},
 {'stream': '09-PIAZZA.wav', 'timeImage': 75, 'timeTouch': 154},
-{'stream': '10-INGRESSO-CERTOSA.wav', 'timeImage': 16, 'timeTouch': 36},
+{'stream': '10-INGRESSO-CERTOSA.wav', 'timeImage': 15, 'timeTouch': 40},
 {'stream': '11-CORTILE-INTERNO.wav', 'timeImage': 35, 'timeTouch': 39},
 {'stream': '12-CORTILE-INTERNO-USCITA.wav', 'timeImage': 45, 'timeTouch': 89},
 {'stream': '13-CROCE-PORTICI.wav', 'timeImage': 25, 'timeTouch': 37},
@@ -385,10 +379,10 @@ var subStates = [
 {'stream': '17-RAMPA.wav', 'timeImage': 25, 'timeTouch': 44},
 {'stream': '18-CORTILE-PADIGLIONE.wav', 'timeImage': 66, 'timeTouch': 88},
 {'stream': '19-INGRESSO2.wav', 'timeImage': 11, 'timeTouch': 22},
-{'stream': '20-PROSPETTIVA.wav', 'timeImage': 2, 'timeTouch': 76},
+{'stream': '20-PROSPETTIVA.wav', 'timeImage': 52, 'timeTouch': 76},
 {'stream': '21-POZZO-LONTANO.wav', 'timeImage': 18, 'timeTouch': 91},
 {'stream': '22-POZZO-VICINO.wav', 'timeImage': 64, 'timeTouch': 135},
-{'stream': '23-POST-POZZO.wav', 'timeImage': 3, 'timeTouch': 97},
+{'stream': '23-POST-POZZO.wav', 'timeImage': 3, 'timeTouch': 79},
 {'stream': '24-USCITA-CHIOSTRO.wav', 'timeImage': 45, 'timeTouch': 52},
 {'stream': '25-CROCICCHIO.wav', 'timeImage': 30, 'timeTouch': 91},
 {'stream': '26-PARTE-DISMESSA.wav', 'timeImage': 5, 'timeTouch': 27},
@@ -462,8 +456,9 @@ config.states.forEach(state => {
 });
 
 
-// // debug: remove some states
+// debug: remove some states
 // config.states = config.states.splice(14, config.states.length);
+// config.states = config.states.splice(config.states.length-1, config.states.length);
 // console.log(config.states);
 
 // ----------------------------------------------------------------------
