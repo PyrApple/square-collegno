@@ -364,7 +364,7 @@ var subStates = [
 {'stream': '02-STIRERIA.wav', 'timeImage': 31, 'timeTouch': 48},
 {'stream': '03-ASCENSORE.wav', 'timeImage': 6, 'timeTouch': 7},
 {'stream': '04-ASCENSORE-TASTI.wav', 'timeImage': 32, 'timeTouch': 42},
-{'stream': '05-SALA_PROVE.wav', 'timeImage': 62, 'timeTouch': 83},
+{'stream': '05-SALA_PROVE.wav', 'timeImage': 62, 'timeTouch': 68},
 {'stream': '06-FINESTRA.wav', 'timeImage': 95, 'timeTouch': 136},
 {'stream': '07-USCITA.wav', 'timeImage': 18, 'timeTouch': 91},
 {'stream': '08-CORTILE-LAVANDERIA.wav', 'timeImage': 35, 'timeTouch': 405},
