@@ -235,28 +235,25 @@ const config = {
         {
           time: 40+11.8,
           type: 'text',
-          placeholder: 'center',
-          classes: ['white', 'align-center'],
-          content: `
-            <dl>
-              <dt class="first">Concezione e realizzazione:</dt>
-              <dd class="first">Lorenzo Bianchi Hoesch</dd>
-
-              <dt>Voce guida:</dt>
-              <dd>Michele di Mauro</dd>
-
-              <dt>Ricerca e sviluppo:</dt>
-              <dd>David Poirier-Quinot, Benjamin Matuszewski</dd>
-
-            </dl>
-          `,
+          placeholder: 'bottom',
+          classes: ['banner'],
+          content: `<a href="https://www.lavanderiaavapore.eu/square/">per approfondire</a>`,
         },
         {
           time: 40+11.8,
           type: 'text',
-          placeholder: 'bottom',
-          classes: ['banner'],
-          content: `<a href="https://www.lavanderiaavapore.eu/square/">per approfondire</a>`,
+          placeholder: 'center',
+          classes: ['white', 'align-center'],
+          content: `
+            <dl>
+              <dt class="first">concezione e realizzazione</dt>
+              <dd class="first">Lorenzo Bianchi Hoesch</dd>
+
+              <dt>voce guida</dt>
+              <dd>Michele di Mauro</dd>
+
+            </dl>
+          `,
         },
         {
           time: 40+19.8,
@@ -265,8 +262,8 @@ const config = {
           classes: ['white', 'align-center'],
           content: `
             <dl>
-              <dt>Contributi:</dt>
-              <dd>Valentina Picello, Mirella Violato, Barbara Altissimo, Doriana Crema, Tommaso Monza, Alessandro Tollari, Rosa Trolese, Viola Scaglione, Daniele Ninarello, Massimiliano Iachini, Paola Chiadò Caponet, Adriana Rinaldi, Piercarlo Miletto, Roberta Borello, Anna Gramaglia, Romeo Pitton, Domenico Canale, Giorgio Tebaldi, Silvano Calzi, Sergio Bertolotto, Lillo Baglio, Fiorenza Menni, Benno Steinegger, Deborah Lopatin, Amir ElSaffar e Szuhwa Wu</dd>
+              <dt>contributi</dt>
+              <dd>Valentina Picello, Mirella Violato, Barbara Altissimo, Doriana Crema, Tommaso Monza, Alessandro Tollari, Rosa Trolese, Viola Scaglione, Daniele Ninarello, Massimiliano Iachini, Paola Chiadò Caponet, Adriana Rinaldi, Piercarlo Miletto, Roberta Borello, Anna Gramaglia, Romeo Pitton, Domenico Canale, Giorgio Tebaldi, Silvano Calzi, Sergio Bertolotto, Lillo Baglio, Fiorenza Menni, Benno Steinegger, Amir ElSaffar, Szuhwa Wu e Deborah Lopatin</dd>
             </dl>
           `,
         },
@@ -277,8 +274,29 @@ const config = {
           classes: ['white', 'align-center'],
           content: `
             <dl>
-              <dt>In collaborazione con:</dt>
-              <dd>Olivier Warusfel (Espaces acoustiques et cognitifs, IRCAM-STMS), Norbert Schnell, Frederic Bevilacqua, Benjamin Matuszewski (Interaction son musique mouvement, IRCAM-STMS), consulenti scientifici IRCAM. Produzione IRCAM-Center Pompidou , Lavanderie a Vapore, Ornithology Productions, Produttore esecutivo PLATÔ</dd>
+              <dt>ricerca e sviluppo</dt>
+              <dd>David Poirier-Quinot, Benjamin Matuszewski</dd>
+
+              <dt>in collaborazione con</dt>
+              <dd>Olivier Warusfel (Espaces acoustiques et cognitifs, IRCAM-STMS), Norbert Schnell, Frederic Bevilacqua, Benjamin Matuszewski (Interaction son musique mouvement, IRCAM-STMS), consulenti scientifici IRCAM</dd>
+            </dl>
+          `,
+        },
+        {
+          time: 40+35.8,
+          type: 'text',
+          placeholder: 'center',
+          classes: ['white', 'align-center'],
+          content: `
+            <dl>
+              <dt>produzione</dt>
+              <dd>IRCAM/Centre Pompidou, Ornithology Productions</dd>
+
+              <dt>produttore esecutivo</dt>
+              <dd>PLATÔ</dd>
+
+              <dt>in collaborazione con</dt>
+              <dd>Piemonte dal Vivo/Lavanderia a Vapore</dd>
             </dl>
           `,
         },
@@ -382,7 +400,7 @@ var subStates = [
 {'stream': '20-PROSPETTIVA.wav', 'timeImage': 52, 'timeTouch': 76},
 {'stream': '21-POZZO-LONTANO.wav', 'timeImage': 18, 'timeTouch': 91},
 {'stream': '22-POZZO-VICINO.wav', 'timeImage': 64, 'timeTouch': 135},
-{'stream': '23-POST-POZZO.wav', 'timeImage': 3, 'timeTouch': 79},
+{'stream': '23-POST-POZZO.wav', 'timeImage': 3, 'timeTouch': 53},
 {'stream': '24-USCITA-CHIOSTRO.wav', 'timeImage': 45, 'timeTouch': 52},
 {'stream': '25-CROCICCHIO.wav', 'timeImage': 30, 'timeTouch': 91},
 {'stream': '26-PARTE-DISMESSA.wav', 'timeImage': 5, 'timeTouch': 27},
