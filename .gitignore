@@ -29,6 +29,6 @@ projects/*
 package-lock.json
 
 # projects/default/assets/streams/**/*
-projects/default/assets/streams/*/
+# projects/default/assets/streams/*/
 
 sound-check-results.txt
