@@ -5,7 +5,7 @@ https://square-collegno.herokuapp.com/
 
 # deploying master to heroku
 
-git push heroku master
+git push heroku main
 
 
 # deploying another branch than master to heroku
