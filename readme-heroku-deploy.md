@@ -75,3 +75,28 @@ npm install
 npm run transpile
 npm prune --production
 npm run start
+
+
+# avoid using lame on distant repo (no slicing, ship mp3 with slug)
+
+git branch --delete bake-sliced-mp3
+git checkout -b bake-sliced-mp3
+
+npm run start
+git add .soundworks/service_audio-stream-manager -f
+
+git rm projects/default/assets/streams/*.wav
+git add projects/default/assets/streams/*/*.mp3 -f
+
+--- a/src/server/PlayerExperience.js
++++ b/src/server/PlayerExperience.js
+@@ -25,6 +25,7 @@ class PlayerExperience extends Experience {
+       compress: true,
+       duration: 4,
+       overlap: 0.1,
++      discardRechunkUpdatedFiles: true,
+     });
+
+git add src/server/PlayerExperience.js
+
+git commit -m 'harcoded .mp3 to git to avoid using lame on server'
