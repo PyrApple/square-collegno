@@ -82,6 +82,13 @@ npm run start
 git branch --delete bake-sliced-mp3
 git checkout -b bake-sliced-mp3
 
+point soundworks to personal fork in package.json:
+-- "soundworks": "^2.1.9",
+++ "soundworks": "PyrApple/soundworks#square-collegno",
+
+add .slugignore, with:
+projects/default/assets/streams/*.wav
+
 npm run start
 git add .soundworks/service_audio-stream-manager -f
 
