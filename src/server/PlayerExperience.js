@@ -25,7 +25,7 @@ class PlayerExperience extends Experience {
       compress: true,
       duration: 4,
       overlap: 0.1,
-      discardRechunkUpdatedFiles: false,
+      discardRechunkUpdatedFiles: true,
     });
 
     this.soundCheck = this.require('sound-check');
